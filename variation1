@@ -1,0 +1,57 @@
+var x = 200;
+var y =300;
+var y1 =280;
+var r = 0;
+
+
+
+function setup() {
+  createCanvas(600, 600);
+  frameRate(10);
+}
+
+function draw() {
+  background(600, 100);
+  background('#F2DA5E');
+  noStroke();
+  
+  
+  
+  fill('#8C8C8C')
+  // 1top rect
+  rect(350, 50,100, 50,10);
+  // 2top rect
+  rect(375, 100,50, 100);
+  // 4 Small rect
+  rect(450, 150,50, 100);
+  // Left rect
+  rect(200, 150,250, 100, 60);
+  // Left Small rect
+  rect(200, 200,100, 100);
+  
+  fill('#ddd')
+  // 3BIG Right rect
+  rect(500, 100,150, 200, 20);
+  fill('#ddd')
+  ellipse(400, 200, 150);
+  
+  
+
+  //!!! WATER !!!
+  
+  
+  noStroke();
+  fill(random(255), random(255), random(255));
+  ellipse(250, y, random(20, 40));
+  y+=15
+  if (y >=600){
+    y=300;
+  }
+   fill(random(200), random(200), random(200));
+  ellipse(250, y1, random(10, 30));
+  y1+=20
+  if (y1 >=600){
+    y1=300;  
+  
+  }
+}
