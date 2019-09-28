@@ -1,0 +1,60 @@
+var x = 210;
+var y = 200;
+var y2 = 300;
+var r = 0;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background("#060126");
+  noStroke();
+
+  
+  // draw smokestack
+  fill(255);
+  rect(180, height, 50, -150);
+  fill("#F6DA8E");
+  rect(180, height, 50, -110);
+
+  
+
+  // draw puff of smoke
+  // fades darker as it gets closer to 0
+  push(); 
+  fill(y);
+  translate(x, y);
+  rotate(r);
+  rect(-10, -10, 20, 20);
+  // up 3 pixels
+  y -= 5;
+  // rotate 0.05 radians, which is about 2.8 degrees
+  r += 0.05
+  // if reach past the top a bunch
+  if(y<0){
+    y=200;
+  }
+  pop();
+  
+  push(); 
+  fill(y2);
+  translate(x, y2);
+  rotate(r);
+  rect(-10, -10, 20, 20);
+  // up 3 pixels
+  y2 -= 5;
+  // rotate 0.05 radians, which is about 2.8 degrees
+  r += 0.05
+  // if reach past the top a bunch
+  if(y2<0){
+    y2=200;
+  }
+  pop();
+  
+  for(var i = 180; i < 240; i = i + 10){
+      fill(random(255),0,0);
+      ellipse(i,250,10,10);
+  }
+
+}
